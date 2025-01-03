@@ -1,0 +1,37 @@
+type User {
+  id: ID!
+  username: String!
+  events: [Event]
+}
+
+type Event {
+  id: ID!
+  title: String!
+  user: User!
+  location: Location!
+  participants: [Participant]
+}
+
+type Location {
+  id: ID!
+  name: String!
+}
+
+type Participant {
+  id: ID!
+  username: String!
+}
+
+type Query {
+  users: [User]
+  user(id: ID!): User
+  
+  events: [Event]
+  event(id: ID!): Event
+  
+  locations: [Location]
+  location(id: ID!): Location
+  
+  participants: [Participant]
+  participant(id: ID!): Participant
+}
